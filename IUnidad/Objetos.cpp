@@ -3,7 +3,7 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
-alumno estudiante[10] ;
+alumno estudiante[3] ;
 int contador=0;
 int op;
 void agregar();
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 }
 
 void agregar(){
-	if(contador<10){
+	if(contador<3){
 		
 		cout<<"Ingrese el codigo"<<endl;
 		cin>>estudiante[contador].codigo;
@@ -61,7 +61,35 @@ void agregar(){
 		contador++;
 	}
 	else{
-		cout<<"Arreglo Lleno"<<endl;
+		//reciclar
+		int pos, codigo, temp;		
+		temp=contador;
+		pos=-1;
+		for(int i=0;i<=temp;i++){
+			if(estudiante[i].codigo==-1){
+				pos=i;
+				i=temp+1;
+			}
+		}
+		if(pos!=-1){
+			cout<<"Ingrese el codigo"<<endl;
+			cin>>estudiante[pos].codigo;
+			cout<<"Ingrese el nombre"<<endl;
+			cin>>estudiante[pos].nombre;
+			cout<<"Ingrese el Apellido"<<endl;
+			cin>>estudiante[pos].apellido;
+			cout<<"Ingrese Nota 1: "<<endl;
+			cin>>estudiante[pos].Nota[0];
+			cout<<"Ingrese Nota 2: "<<endl;
+			cin>>estudiante[pos].Nota[1];
+		}
+		else{
+			cout<<"Arreglo Lleno"<<endl;	
+		}
+		
+		
+		
+	
 	}
 	
 	
