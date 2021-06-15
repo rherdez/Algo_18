@@ -9,12 +9,14 @@ int op;
 void agregar();
 void presentar();
 void borrar();
+void actualizar();
 int main(int argc, char** argv) {
     do{
     	cout<<"Menu"<<endl;
     	cout<<"1) Agregar"<<endl;
     	cout<<"2) Presentar"<<endl;
     	cout<<"3) Borrar"<<endl;
+    	cout<<"4) Actualizar"<<endl;
     	cout<<"0) Salir"<<endl;
     	cin>>op;
     	
@@ -27,6 +29,9 @@ int main(int argc, char** argv) {
     			break;
     		case 3:
     			borrar();
+    			break;
+    		case 4:
+    			actualizar();
     			break;
     		case 0:
     			break;
@@ -91,4 +96,31 @@ void borrar(){
 	if(pos!=-1){
 		estudiante[pos].codigo=-1;
 	}
+}
+void actualizar(){
+	int pos, codigo, temp;
+	cout<<"Ingrese el codigo a Modificar"<<endl;
+	cin>>codigo;
+	temp=contador;
+	
+	for(int i=0;i<=temp;i++){
+		if(codigo==estudiante[i].codigo){
+			pos=i;
+			i=temp+1;
+		}
+	}
+	if(pos!=-1){
+		
+		cout<<"Ingrese el codigo"<<endl;
+		cin>>estudiante[pos].codigo;
+		cout<<"Ingrese el nombre"<<endl;
+		cin>>estudiante[pos].nombre;
+		cout<<"Ingrese el Apellido"<<endl;
+		cin>>estudiante[pos].apellido;
+		cout<<"Ingrese Nota 1: "<<endl;
+		cin>>estudiante[pos].Nota[0];
+		cout<<"Ingrese Nota 2: "<<endl;
+		cin>>estudiante[pos].Nota[1];
+	}
+	
 }
