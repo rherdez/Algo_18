@@ -1,6 +1,6 @@
 [Project]
-FileName=App_DO.dev
-Name=App_DO
+FileName=Arreglos.dev
+Name=Arreglos
 Type=1
 Ver=2
 ObjFiles=
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=App_DO.cpp
+FileName=arreglo.cpp
 CompileCpp=1
 Folder=
 Compile=1

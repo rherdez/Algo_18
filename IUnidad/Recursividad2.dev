@@ -1,6 +1,6 @@
 [Project]
-FileName=App_DO.dev
-Name=App_DO
+FileName=Recursividad2.dev
+Name=Recursividad2
 Type=1
 Ver=2
 ObjFiles=
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=App_DO.cpp
+FileName=Recursividad.cpp
 CompileCpp=1
 Folder=
 Compile=1
