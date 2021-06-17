@@ -10,6 +10,8 @@ void agregar();
 void presentar();
 void borrar();
 void actualizar();
+void ordenar();
+void ordenar2();
 int main(int argc, char** argv) {
     do{
     	cout<<"Menu"<<endl;
@@ -17,6 +19,8 @@ int main(int argc, char** argv) {
     	cout<<"2) Presentar"<<endl;
     	cout<<"3) Borrar"<<endl;
     	cout<<"4) Actualizar"<<endl;
+    	cout<<"5) Ordenar"<<endl;
+    	cout<<"6) Ordenar2"<<endl;
     	cout<<"0) Salir"<<endl;
     	cin>>op;
     	
@@ -33,6 +37,12 @@ int main(int argc, char** argv) {
     		case 4:
     			actualizar();
     			break;
+    		case 5:
+    			ordenar();
+    			presentar();
+    		case 6:
+    			ordenar2();
+    			presentar();
     		case 0:
     			break;
     		default:
@@ -85,14 +95,9 @@ void agregar(){
 		}
 		else{
 			cout<<"Arreglo Lleno"<<endl;	
-		}
-		
-		
-		
+		}						
 	
-	}
-	
-	
+	}		
 }
 
 void presentar(){
@@ -152,3 +157,44 @@ void actualizar(){
 	}
 	
 }
+void ordenar(){
+	alumno temp;
+	
+	for(int i=0;i<3;i++){
+		for(int x=1;x<3;x++){
+			if(estudiante[x-1].calcular_promedio()<estudiante[x].calcular_promedio()){
+					temp.codigo=estudiante[x-1].codigo;
+					temp.nombre=estudiante[x-1].nombre;
+					temp.apellido=estudiante[x-1].apellido;
+					temp.Nota[0]=estudiante[x-1].Nota[0];
+					temp.Nota[1]=estudiante[x-1].Nota[1];
+															
+					estudiante[x-1].codigo=estudiante[x].codigo;
+					estudiante[x-1].nombre=estudiante[x].nombre;
+					estudiante[x-1].apellido=estudiante[x].apellido;
+					estudiante[x-1].Nota[0]=estudiante[x].Nota[0];
+					estudiante[x-1].Nota[1]=estudiante[x].Nota[1];
+					
+					estudiante[x].codigo=temp.codigo;
+					estudiante[x].nombre=temp.nombre;
+					estudiante[x].apellido=temp.apellido;
+					estudiante[x].Nota[0]=temp.Nota[0];
+					estudiante[x].Nota[1]=temp.Nota[1];																			
+			}	
+		}
+	}
+	
+}
+void ordenar2(){
+	alumno ordenados[contador];
+	for (int i=0; i<contador; i++){
+		for (int j=i+1; j<contador; j++){
+			if(estudiante[i].calcular_promedio()<estudiante[j].calcular_promedio()){
+    			ordenados[i]=estudiante[i];
+    			estudiante[i]=estudiante[j];
+    			estudiante[j]=ordenados[i];
+   			}
+		}
+	}
+}
+
