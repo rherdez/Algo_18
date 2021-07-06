@@ -5,7 +5,7 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
-nodo *I,*F,*T;
+nodo *I,*F,*T,*A;
 
 void agregar(int x);
 void presentar();
@@ -109,5 +109,8 @@ void llenar(){
 	}
 }
 void vaciar(){
+I=NULL;
+T=NULL;
+F=NULL;
 	
 }
