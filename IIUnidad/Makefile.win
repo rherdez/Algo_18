@@ -1,15 +1,15 @@
-# Project: Lista_Simple
+# Project: Project1
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = Lista_Simple.o nodo.o lista.o
-LINKOBJ  = Lista_Simple.o nodo.o lista.o
+OBJ      = pilas_proyecto.o nodop.o
+LINKOBJ  = pilas_proyecto.o nodop.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Lista_Simple.exe
+BIN      = Pilas_proyecto.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -24,11 +24,8 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-Lista_Simple.o: Lista_Simple.cpp
-	$(CPP) -c Lista_Simple.cpp -o Lista_Simple.o $(CXXFLAGS)
+pilas_proyecto.o: pilas_proyecto.cpp
+	$(CPP) -c pilas_proyecto.cpp -o pilas_proyecto.o $(CXXFLAGS)
 
-nodo.o: nodo.cpp
-	$(CPP) -c nodo.cpp -o nodo.o $(CXXFLAGS)
-
-lista.o: lista.cpp
-	$(CPP) -c lista.cpp -o lista.o $(CXXFLAGS)
+nodop.o: nodop.cpp
+	$(CPP) -c nodop.cpp -o nodop.o $(CXXFLAGS)
